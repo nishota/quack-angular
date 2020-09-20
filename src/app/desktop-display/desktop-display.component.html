@@ -1,0 +1,13 @@
+<app-toolbar [screenType]="screenType"></app-toolbar>
+<mat-sidenav-container class="all-container desktop">
+    <mat-sidenav class="sidebar" #sidenav position="start" mode="over" [opened]="isOpened"
+        [ngStyle]="{'width': sideNavWidth}">
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content class="main_container">
+        <app-display></app-display>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-pc-trend [trend]="trend" [linkTrend]="linkTrend"></app-pc-trend>
+<app-pc-button (ToggleSidebar)="toggleSidebar()"></app-pc-button>

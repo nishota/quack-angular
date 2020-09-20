@@ -1,0 +1,12 @@
+<mat-card class="trend_card"
+[ngClass]="{'show': IsShown, 'collapsed': !IsShown}"
+[style.left]="trendLeft">
+    <mat-card-content>
+        <p>
+            現在のトレンド
+        </p>
+        <a class="trend" [style.font-size]="fontSize" [href]="linkTrend"  target="_blank">
+                {{trend}}
+        </a>
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,23 @@
+.toolbar {
+    color: white;
+    background-color:rgb(255, 111, 97);
+    border-bottom: 2px solid #dddddd;
+}
+
+.logo {
+    margin-right: 5px;
+    height: 50px;
+    text-align: center;
+}
+
+.icon {
+    margin-left: 0;
+    height: 25px;
+    text-align: center;
+}
+
+.desktop{
+    margin-left: 50px;
+}
+/* .mobile{
+} */
