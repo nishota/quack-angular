@@ -1,4 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
-
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "M PLUS Rounded 1c"; }
+
+* {
+    margin: 0 auto;
+}
+html,body{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+} 
+
+/*
+ * sidebarを出したときの背景色を透明に変更
+ */
+.mat-drawer-backdrop.mat-drawer-shown{
+    background-color: transparent !important;
+}
+/*
+ * sidebarの中の背景色を透明に変更
+ */
+.mat-drawer-inner-container{
+    /* background-color: rgba(120, 120, 120, .6); */
+    background-image: url(./assets/batumaru.png);
+    background-repeat: repeat;
+}
+
+/* アプリ全体でfocus時に枠が出ないように設定 */
+:focus{
+    outline: transparent;
+}
