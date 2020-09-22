@@ -12,7 +12,7 @@ export class ToolbarComponent implements OnInit {
 
   isDesktop = true; // タブレット版を作る場合、要検討
   logoSrc = environment.frontUrl + 'assets/Quack.png';
-  imgSrc = environment.frontUrl + 'assets/kamo_colorful_logo.png';
+  imgSrc = environment.frontUrl + 'assets/kamo.png';
 
   constructor() {
   }

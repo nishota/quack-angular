@@ -12,6 +12,9 @@
             <p [innerText]="Text"></p>
           </div>
         </div>
+      </mat-card-content>
+      <img *ngIf="hasImg" mat-card-image [src]="ImgUrl" alt = ""/>
+      <mat-card-content>
         <div class="inner-footer">
           <ul>
             <li class="user-name">

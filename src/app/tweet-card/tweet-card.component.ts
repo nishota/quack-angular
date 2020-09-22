@@ -15,6 +15,7 @@ export class TweetCardComponent implements DoCheck {
   @Input() IsShown: boolean;
   @Input() Changed: boolean;
   @Input() Delay: number;
+  @Input() ImgUrl: string;
 
   class: string;
 
@@ -22,6 +23,8 @@ export class TweetCardComponent implements DoCheck {
   animation: string;
   duration: string;
   delay: string;
+
+  hasImg: boolean;
 
   constructor(private ws: WindowStateService) { }
 
@@ -32,6 +35,7 @@ export class TweetCardComponent implements DoCheck {
       this.formTop = String(this.normRand((TweetCardComponent.num % Math.ceil(this.ws.innerHeight - 200)), 100) + 64) + 'px';
       this.animation = 'animation' + String(this.ws.windowIndex);
       this.Changed = false;
+      this.ImgUrl.length ? this.hasImg = true : this.hasImg = false;
       if (TweetCardComponent.num < 10000000000) {
         TweetCardComponent.num += 200;
       } else {

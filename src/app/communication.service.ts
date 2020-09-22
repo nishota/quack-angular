@@ -38,6 +38,7 @@ export class CommunicationService {
           res.text, res.usr.name,
           environment.twitterUrl + res.usr.id,
           new Date(res.date).toLocaleString(),
+          res.media_url,
           0, false, true, 0);
         this.count++;
         this.state.contentSource.next(tweetData);
