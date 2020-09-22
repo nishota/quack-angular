@@ -1,9 +1,8 @@
-// TODO pythonとの連携のため、JSON化を考える
-export const ConnectionMode = {
-    Connect: 'quack-connect',
-    Disconnect: 'quack-disconnect',
-    ClientGetData: 'quack-getTweetData',
-    ServerGetData: 'quackNode-getTweetData',
+export enum ConnectionMode {
+    Connect = 'quack-connect',
+    Disconnect = 'quack-disconnect',
+    GetTweet = 'quack-get-tweet',
+    GetTrend = 'quack-get-trend',
 };
 
 export const Count = {

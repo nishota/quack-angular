@@ -27,12 +27,11 @@ export class WindowStateService {
   isLoadingSource = new Subject<{ flag: boolean, message: string }>();
   isLoading$ = this.isLoadingSource.asObservable();
 
-  contentSource = new Subject<TweetData[]>();
+  contentSource = new Subject<TweetData>();
   content$ = this.contentSource.asObservable();
   trendSource = new Subject<string>();
   trend$ = this.trendSource.asObservable();
 
-  meta$ = this.is.getDescription();
   infomation$ = this.is.getInfomation();
   quack$ = this.is.getQuackSystem();
 

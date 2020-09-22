@@ -16,20 +16,20 @@ export class Socket {
       });
   }
 
-  static emit(emitName: string, data?: any) {
+  static emit<T>(emitName: string, data?: T) {
     this.Connection.emit(emitName, data);
   }
 
-  static on(onName: string): Observable<any> {
-    const observable = new Observable(observer => {
-      this.Connection.on(onName, (data) => {
+  static on<T>(onName: string): Observable<T> {
+    const observable = new Observable<T>(observer => {
+      this.Connection.on(onName, (data: T) => {
         observer.next(data);
       });
-      this.Connection.on('connect_error', (err) => {
+      this.Connection.on('connect_error', () => {
         const errMsg = 'Connection Error...';
         observer.error(errMsg);
       });
-      this.Connection.on('connect_timeout', (err) => {
+      this.Connection.on('connect_timeout', () => {
         const errMsg = 'Connection Timeout...';
         observer.error(errMsg);
       });

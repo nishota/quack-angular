@@ -35,26 +35,23 @@ export class DisplayComponent implements OnInit, AfterViewInit, OnDestroy {
     // tweetを格納
     this.subscriptions.push(
       this.ws.content$.subscribe(
-        (tweetDatas: TweetData[]) => {
+        (data: TweetData) => {
           if (!this.isLoading) {
-            tweetDatas.forEach(
-              (data: TweetData) => {
-                const id = data.id;
-                this.tweetDatas[id].Text = data.Text;
-                this.tweetDatas[id].Date = data.Date;
-                this.tweetDatas[id].User = data.User;
-                this.tweetDatas[id].Url = data.Url;
-                this.tweetDatas[id].Changed = true;
-                this.tweetDatas[id].Delay = 5 * Math.random();
-                // this.tweetDatas[id].FromTop =
-                Anime.startAnime(
-                  this.tweetDatas[id],
-                  this.isLoading,
-                  this.ws.cardDuration,
-                  this.tweetDatas[id].Delay,
-                  (endData: TweetData) => {
-                    endData.isShown = false;
-                  });
+            const id = data.id;
+            this.tweetDatas[id].Text = data.Text;
+            this.tweetDatas[id].Date = data.Date;
+            this.tweetDatas[id].User = data.User;
+            this.tweetDatas[id].Url = data.Url;
+            this.tweetDatas[id].Changed = true;
+            this.tweetDatas[id].Delay = 5 * Math.random();
+            // this.tweetDatas[id].FromTop =
+            Anime.startAnime(
+              this.tweetDatas[id],
+              this.isLoading,
+              this.ws.cardDuration,
+              this.tweetDatas[id].Delay,
+              (endData: TweetData) => {
+                endData.isShown = false;
               });
           }
         }

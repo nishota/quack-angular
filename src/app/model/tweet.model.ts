@@ -1,9 +1,13 @@
-/**
- * 取得データ型
- */
-export interface TweetRes {
-    trend: string;
-    tweets: any[];
+export interface ITweetData{
+    id: string;
+    text: string;
+    date: Date;
+    media_url: string;
+    usr: {id: string, name: string};
+}
+
+export interface ITrend{
+    name: string;
 }
 
 export class TweetData {

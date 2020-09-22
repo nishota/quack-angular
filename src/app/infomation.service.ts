@@ -15,13 +15,11 @@ import { QuackSystem } from './model/quack-system.model';
 @Injectable()
 export class InfomationService {
   constructor(private http: HttpClient) { }
+  private getData<T>(url: string): Observable<T>{return this.http.get<T>(url);}
   getInfomation(): Observable<Infomation[]> {
-    return this.http.get<Infomation[]>(environment.infoUrl);
-  }
-  getDescription(): Observable<Description> {
-    return this.http.get<Description>(environment.metadataUrl);
+    return this.getData<Infomation[]>(environment.infoUrl);
   }
   getQuackSystem(): Observable<QuackSystem> {
-    return this.http.get<QuackSystem>(environment.quackSystemUrl);
+    return this.getData<QuackSystem>(environment.quackSystemUrl);
   }
 }
