@@ -37,7 +37,7 @@ export class CommunicationService {
           this.count % Count.Card,
           res.text, res.usr.name,
           environment.twitterUrl + res.usr.id,
-          res.date.toLocaleString(),
+          new Date(res.date).toLocaleString(),
           0, false, true, 0);
         this.count++;
         this.state.contentSource.next(tweetData);

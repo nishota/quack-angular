@@ -11,7 +11,7 @@ export const environment = {
   metadataUrl: 'http://localhost:4200/assets/metadata.json',
   quackSystemUrl: 'http://localhost:4200/assets/quack-system.json',
   licence: 'http://localhost:4200/3rdpartylicenses.txt',
-  socketUrl: 'http://localhost:5001',
+  socketUrl: 'http://localhost:4000',
   pathString: '',
 };
 
