@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SpTrendComponent } from './sp-trend.component';
 
@@ -6,7 +6,7 @@ describe('SpTrendComponent', () => {
   let component: SpTrendComponent;
   let fixture: ComponentFixture<SpTrendComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ SpTrendComponent ]
     })
